@@ -8,14 +8,14 @@ from pandas import DataFrame
 from sklearn import metrics
 from sklearn.decomposition import PCA
 
-data_path_UC = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\UC_2020.xls" # CORE AREA
-data_path_UE = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\UE_2020.xls" # EXTENSION AREA
-data_path_ALL = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\ALL_BV_POP_NL2020.xls" #CORE + EXTENSION
-# data_path_ALL = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\UC&UE_2020.xlsx" #CORE + EXTENSION
+data_path_UC = r"F:\Data_new\Results\Results_WPOP_GDP_CO\UC_2020.xls" # CORE AREA
+data_path_UE = r"F:\Data_new\Results\Results_WPOP_GDP_CO\UE_2020.xls" # EXTENSION AREA
+data_path_ALL = r"F:\Data_new\Results\Results_WPOP_GDP_CO\ALL_BV_POP_NL2020.xls" #CORE + EXTENSION
+# data_path_ALL = r"F:\Data_new\Results\Results_WPOP_GDP_CO\UC&UE_2020.xlsx" #CORE + EXTENSION
 
-# label_mydata = r"F:\Yifan Teng\Data_new\Results\label.xls"
-out_labeled = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\data_labeled_ALL_PP3.xls"
-out_center = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\data_clusterCenters_ALL_PP3.xls"
+# label_mydata = r"F:\Data_new\Results\label.xls"
+out_labeled = r"F:\Data_new\Results\Results_WPOP_GDP_CO\data_labeled_ALL_PP3.xls"
+out_center = r"F:\Data_new\Results\Results_WPOP_GDP_CO\data_clusterCenters_ALL_PP3.xls"
 
 # 导入数据，默认第一行为索引，index_col设定第一列也为索引
 # 选择sheet， 从0开始编号， 直接引用sheet name也行
@@ -170,4 +170,5 @@ plt.figure(figsize=(8, 6))
 plt.scatter(data_pca.values[:, 0], data_pca.values[:, 1], s=3, c=data_pca.values[:, 2], cmap='Accent')
 plt.scatter(data_pca_centers.values[:, 0], data_pca_centers.values[:, 1], marker='o', s=55, c='#8E00FF')
 plt.show()
+
 
