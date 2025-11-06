@@ -5,18 +5,18 @@ import pandas as pd
 import os
 
 # ================= Replace these =================
-workspace = r"F:\Yifan Teng\Data_new"
+workspace = r"F:\Data_new"
 env.workspace = workspace
 env.overwriteOutput = True
 
-countries_fc = r"F:\Yifan Teng\Data_new\MID_DATA.gdb\Countr_ne50m_Moll"   # 国家矢量
+countries_fc = r"F:\Data_new\MID_DATA.gdb\Countr_ne50m_Moll"   # 国家矢量
 country_id_field = "SOVEREIGNT"    # 用于匹配Excel的国家ID字段
-excel_path = r"F:\Yifan Teng\Data_new\Results\NL2020_COUNT.xls"
+excel_path = r"F:\Data_new\Results\NL2020_COUNT.xls"
 excel_sheet = "NL_SCALE_FACTOR2020_GDP"
-scale_field_name = "SCALE_FACTOR"  # Excel中的列名（将写入到矢量的字段）
-nightlight_raster = r"F:\Yifan Teng\Data_new\MID_IMAGE.gdb\NL2020_Moll" # NL
-out_scale_raster = r"F:\Yifan Teng\Data_new\MID_IMAGE.gdb\scale_raster_2020GDP" # scale factor
-out_corrected = r"F:\Yifan Teng\Data_new\MID_IMAGE.gdb\NL_CORRECTION_2020GDP_Moll"
+scale_field_name = "SCALE_FACTOR"  
+nightlight_raster = r"F:\Data_new\MID_IMAGE.gdb\NL2020_Moll" # NL
+out_scale_raster = r"F:\Data_new\MID_IMAGE.gdb\scale_raster_2020GDP" # scale factor
+out_corrected = r"F:\Data_new\MID_IMAGE.gdb\NL_CORRECTION_2020GDP_Moll"
 # =================================================
 
 # 检查 Spatial Analyst 扩展
@@ -98,3 +98,4 @@ if 'projected_fc' in locals():
     arcpy.Delete_management(projected_fc)
 
 arcpy.CheckInExtension("Spatial")
+
