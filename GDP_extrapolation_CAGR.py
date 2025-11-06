@@ -167,20 +167,20 @@ def cagr_extrapolate(gdp_df, target_year, n_boot=2000, random_state=0):
 #     #          color="red", fontsize=10, va="bottom", ha="left",
 #     #          bbox=dict(facecolor="white", edgecolor="none", alpha=0.6))
 #     # #
-#     # # 2️⃣ 预测未来（例如 2020）
+#     # # 预测未来（例如 2020）
 #     # target_year2 = 2020
 #     # pred_mean2, ci2, cagr_samples2 = cagr_extrapolate(df_late, target_year=target_year2)
 #     # print(f"Estimated GDP in {target_year2}: {pred_mean2:.2f}")
 #     # print(f"95% confidence interval: {ci2}")
 #     #
-#     # # 3️⃣ 构建预测线
+#     # # 构建预测线
 #     # cagr_mean2 = np.mean(cagr_samples2)
 #     # all_years2 = np.arange(years_late[0], target_year2 + 1)
 #     # # gdp_proj = gdp[0] * (1 + cagr_mean) ** (all_years - years[0])
 #     # # gdp_proj = np.interp(all_years, [years[0], target_year], [gdp[0], pred_mean])
 #     # gdp_proj2 = gdp_late[-1] * (1 + cagr_mean2) ** (all_years2 - years_late[-1])
 #     #
-#     # # 🔸未来年份部分（虚线）
+#     # # 未来年份部分（虚线）
 #     # future_mask2 = all_years2 > years_late[-1]
 #     # plt.plot(all_years2[future_mask2], gdp_proj2[future_mask2], '--', color="orange")
 #     # plt.plot(all_years2[future_mask2], gdp_proj2[future_mask2], 'o', color="orange")
@@ -209,7 +209,7 @@ def cagr_extrapolate(gdp_df, target_year, n_boot=2000, random_state=0):
 
 # === 主程序 ===
 if __name__ == "__main__":
-    # 1️⃣ 读取数据
+    # 读取数据
     excel_path = r"F:\Yifan Teng\Data_new\API_NY.GDP.MKTP.KD_DS2_en_excel_v2_130141.xls"
     df = pd.read_excel(excel_path, sheet_name="Yemen")
 
@@ -217,22 +217,22 @@ if __name__ == "__main__":
     years = df["year"].values
     gdp = df["GDP"].values
 
-    # 2️⃣ 预测未来（例如 2020）
+    # 预测未来（例如 2020）
     target_year = 2020
     pred_mean, ci, cagr_samples = cagr_extrapolate(df, target_year=target_year)
     print(f"Estimated GDP in {target_year}: {pred_mean:.2f}")
     print(f"95% confidence interval: {ci}")
 
-    # 3️⃣ 构建预测线
+    # 构建预测线
     cagr_mean = np.mean(cagr_samples)
     all_years = np.arange(years[0], target_year + 1)
     gdp_proj = gdp[0] * (1 + cagr_mean) ** (all_years - years[0])
 
-    # 4️⃣ 绘图
+    # 绘图
     plt.figure(figsize=(8, 5))
     plt.plot(years, gdp, 'o-', color="steelblue", label="Actual data")
 
-    # # 🔸未来年份部分（虚线）
+    # # 未来年份部分（虚线）
     future_mask = all_years > years[-1]
     # plt.plot(all_years[future_mask], gdp_proj[future_mask], '--', color="orange", label="Projected trend")
     # plt.plot(all_years[future_mask], gdp_proj[future_mask], 'o', color="orange")
@@ -249,7 +249,7 @@ if __name__ == "__main__":
     df_pred = pd.DataFrame(data=[[target_year2, pred_mean2],
                        [target_year, pred_mean]],
                  columns=['year', 'GDP'])
-    # 🔸未来年份部分（虚线）
+    # 未来年份部分（虚线）
     years_pred = df_pred["year"].values
     gdp_pred = df_pred["GDP"].values
     plt.plot(years_pred, gdp_pred, '--', color="orange", label="Projected trend")
@@ -268,3 +268,4 @@ if __name__ == "__main__":
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
     plt.show()
+
