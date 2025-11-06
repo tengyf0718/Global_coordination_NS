@@ -6,13 +6,13 @@ import matplotlib.pyplot as plt
 from mpmath import linspace
 from sympy.printing.pretty.pretty_symbology import line_width
 
-# data_path_UC = r"F:\Yifan Teng\Data_new\Results\UC_ALL_2020.xls" # CORE AREA
-# data_path_UE = r"F:\Yifan Teng\Data_new\Results\UE_ALL_2020.xls" # EXTENSION AREA
-data_path_UC = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\UC_2020.xls" # CORE AREA
-data_path_UE = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\UE_2020.xls" # EXTENSION AREA
-data_path_ALL = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\ALL_BV_POP_NL2020.xls" #CORE + EXTENSION
-# out_excel = r"F:\Yifan Teng\Data_new\Results\UC&UE_PP_CCDM_onlyminmax.xls"
-out_excel = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\ALL_CCDM_WORLD_GDP_PP.xls"
+# data_path_UC = r"F:\Data_new\Results\UC_ALL_2020.xls" # CORE AREA
+# data_path_UE = r"F:\Data_new\Results\UE_ALL_2020.xls" # EXTENSION AREA
+data_path_UC = r"F:\Data_new\Results\Results_WPOP_GDP_CO\UC_2020.xls" # CORE AREA
+data_path_UE = r"F:\Data_new\Results\Results_WPOP_GDP_CO\UE_2020.xls" # EXTENSION AREA
+data_path_ALL = r"F:\Data_new\Results\Results_WPOP_GDP_CO\ALL_BV_POP_NL2020.xls" #CORE + EXTENSION
+# out_excel = r"F:\Data_new\Results\UC&UE_PP_CCDM_onlyminmax.xls"
+out_excel = r"F:\Data_new\Results\Results_WPOP_GDP_CO\ALL_CCDM_WORLD_GDP_PP.xls"
 
 def minmax_series(s):
     return (s - s.min()) / (s.max() - s.min())
@@ -106,3 +106,4 @@ plt.ylabel('Coordination Degree (D)')
 # plt.title('Urban Area Coupling Coordination Pattern')
 plt.colorbar(label='Coupling Degree (C)')
 plt.show()
+
