@@ -5,15 +5,15 @@ import os
 # ===============================
 # 参数设置（修改为你的路径）
 # ===============================
-arcpy.env.workspace = r"F:\Yifan Teng\Data_new"
+arcpy.env.workspace = r"F:\Data_new"
 arcpy.env.overwriteOutput = True
 
-# zone_shp = r"F:\Yifan Teng\Data_new\MID_DATA.gdb\UC_NS_sub_CounAndConti_Moll"  # SHP
-zone_shp = r"F:\Yifan Teng\Data_new\MID_DATA.gdb\ALL_MODIS_2020"  # SHP
+# zone_shp = r"F:\Data_new\MID_DATA.gdb\UC_NS_sub_CounAndConti_Moll"  # SHP
+zone_shp = r"F:\Data_new\MID_DATA.gdb\ALL_MODIS_2020"  # SHP
 zone_field = "Id"                          # 统计字段
-value_raster = r"F:\Yifan Teng\Data_new\GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100_V1_0\GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100_V1_0.tif"    # 栅格文件
-out_table = r"F:\Yifan Teng\Data_new\MID_DATA.gdb\ALL_BV_2020_GHSL"            # 临时输出
-# out_csv = r"F:\Yifan Teng\Data_new\UE_POP_2020.csv"        # 最终输出 CSV
+value_raster = r"F:\Data_new\GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100_V1_0\GHS_BUILT_V_E2020_GLOBE_R2023A_54009_100_V1_0.tif"    # 栅格文件
+out_table = r"F:\Data_new\MID_DATA.gdb\ALL_BV_2020_GHSL"            # 临时输出
+# out_csv = r"F:\Data_new\UE_POP_2020.csv"        # 最终输出 CSV
 
 # ===============================
 # 检查许可
@@ -43,3 +43,4 @@ print("Zonal statistics table created:", out_table)
 # df.to_csv(out_csv, index=False, encoding="utf-8-sig")
 #
 # print("CSV 文件输出完成：", out_csv)
+
