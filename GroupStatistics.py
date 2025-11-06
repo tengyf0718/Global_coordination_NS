@@ -2,24 +2,24 @@ import pandas as pd
 import numpy as np
 from sqlalchemy import column
 
-data_path_UC = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\UC_CCDM_WORLD_GDP_PP.xls" # CORE AREA
-data_path_UE = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\UE_CCDM_WORLD_GDP_PP.xls" # EXTENSION AREA
-data_path_ALL = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\ALL_CCDM_WORLD_GDP_PP_WITHNS.xls" # MODIS 2020 ENTIRE AREA
+data_path_UC = r"F:\Data_new\Results\Results_WPOP_GDP_CO\UC_CCDM_WORLD_GDP_PP.xls" # CORE AREA
+data_path_UE = r"F:\Data_new\Results\Results_WPOP_GDP_CO\UE_CCDM_WORLD_GDP_PP.xls" # EXTENSION AREA
+data_path_ALL = r"F:\Data_new\Results\Results_WPOP_GDP_CO\ALL_CCDM_WORLD_GDP_PP_WITHNS.xls" # MODIS 2020 ENTIRE AREA
 
 # 按照  南北方国家  来统计变量
-out_NS_UC = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\UC_NS_statistics.xls"
-out_NS_UE = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\UE_NS_statistics.xls"
-out_NS_ALL = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\ALL_NS_statistics.xls"
+out_NS_UC = r"F:\Data_new\Results\Results_WPOP_GDP_CO\UC_NS_statistics.xls"
+out_NS_UE = r"F:\Data_new\Results\Results_WPOP_GDP_CO\UE_NS_statistics.xls"
+out_NS_ALL = r"F:\Data_new\Results\Results_WPOP_GDP_CO\ALL_NS_statistics.xls"
 # 按照  subregion  来统计变量
-out_SUB_UC = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\UC_SUB_statistics.xls"
-out_SUB_UE = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\UE_SUB_statistics.xls"
-out_SUB_ALL = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\ALL_SUB_statistics.xls"
+out_SUB_UC = r"F:\Data_new\Results\Results_WPOP_GDP_CO\UC_SUB_statistics.xls"
+out_SUB_UE = r"F:\Data_new\Results\Results_WPOP_GDP_CO\UE_SUB_statistics.xls"
+out_SUB_ALL = r"F:\Data_new\Results\Results_WPOP_GDP_CO\ALL_SUB_statistics.xls"
 # 按照  ECONOMY  来统计变量
-out_ECOTYPE_UC = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\UC_ECOTYPE_statistics.xls"
-out_ECOTYPE_UE = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\UE_ECOTYPE_statistics.xls"
-out_ECOTYPE_ALL = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\ALL_ECOTYPE_statistics.xls"
+out_ECOTYPE_UC = r"F:\Data_new\Results\Results_WPOP_GDP_CO\UC_ECOTYPE_statistics.xls"
+out_ECOTYPE_UE = r"F:\Data_new\Results\Results_WPOP_GDP_CO\UE_ECOTYPE_statistics.xls"
+out_ECOTYPE_ALL = r"F:\Data_new\Results\Results_WPOP_GDP_CO\ALL_ECOTYPE_statistics.xls"
 # 按照 SOVEREIGNT 来统计变量
-out_SOVEREIGNT_ALL = r"F:\Yifan Teng\Data_new\Results\Results_WPOP_GDP_CO\ALL_SOVEREIGNT_statistics.xls"
+out_SOVEREIGNT_ALL = r"F:\Data_new\Results\Results_WPOP_GDP_CO\ALL_SOVEREIGNT_statistics.xls"
 
 # 选择CORE area
 df_uc = pd.read_excel(data_path_UC, sheet_name=0, index_col=0)
@@ -420,4 +420,5 @@ final_ALL_SOVEREIGNT = stats_all_SOVEREIGNT[['SOVEREIGNT','n',
                      'D_mean','D_std',
                      'BV','POP','ECO','BV_PP','ECO_PP','C','D']]
 final_ALL_SOVEREIGNT.rename(columns={'n':'(# of urban areas)'}, inplace=True)
+
 final_ALL_SOVEREIGNT.to_excel(out_SOVEREIGNT_ALL, index=True)
